@@ -2,7 +2,7 @@
 #define SIZEx 4		
 #define SIZEy 4		//배열의 크기 지정
 
-void change(int *pa, int *pb)		//배열 두개를 매개변수로 받는 함수이다.
+void change(int *pa, int *pb)		//배열 두개를 포인터 형식의 매개변수로 받는 함수이다.
 {
 	int z, i;		//z는 배열의 원소교환을 위한 제 3의 정수형 변수
 	
