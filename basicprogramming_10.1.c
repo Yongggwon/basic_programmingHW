@@ -1,25 +1,24 @@
 #include <stdio.h>
 #define SIZEx 4		
-#define SIZEy 4		//¹è¿­ÀÇ Å©±â ÁöÁ¤
+#define SIZEy 4		//ë°°ì—´ì˜ í¬ê¸° ì§€ì •
 
-void change(int a, int b)		//¹è¿­ µÎ°³¸¦ ¸Å°³º¯¼ö·Î ¹Þ´Â ÇÔ¼öÀÌ´Ù.
+void change(int *pa, int *pb)		//ë°°ì—´ ë‘ê°œë¥¼ ë§¤ê°œë³€ìˆ˜ë¡œ ë°›ëŠ” í•¨ìˆ˜ì´ë‹¤.
 {
-	int z, i;		//z´Â ¹è¿­ÀÇ ¿ø¼Ò±³È¯À» À§ÇÑ Á¦ 3ÀÇ Á¤¼öÇü º¯¼ö
-	int* pa = a, * pb = b;		//ÀÔ·Â¹ÞÀº ¹è¿­ µÎ °³¸¦ °¢°¢ Æ÷ÀÎÅÍº¯¼ö·Î ÁöÁ¤
-
-	if (SIZEx == SIZEy)		//¹è¿­ÀÇ »çÀÌÁî°¡ °°¾Æ¾ß¸¸ ÇÔ¼ö ½ÇÇà
+	int z, i;		//zëŠ” ë°°ì—´ì˜ ì›ì†Œêµí™˜ì„ ìœ„í•œ ì œ 3ì˜ ì •ìˆ˜í˜• ë³€ìˆ˜
+	
+	if (SIZEx == SIZEy)		//ë°°ì—´ì˜ ì‚¬ì´ì¦ˆê°€ ê°™ì•„ì•¼ë§Œ í•¨ìˆ˜ ì‹¤í–‰
 	{
-		for (i = 0; i < SIZEx; i++)	//¹è¿­ÀÇ Å©±â¸¸Å­ ¹Ýº¹
+		for (i = 0; i < SIZEx; i++)	//ë°°ì—´ì˜ í¬ê¸°ë§Œí¼ ë°˜ë³µ
 		{
-			z = *(pa + i);	//a¸¦ z·Î, b¸¦ a·Î, z¸¦ b·Î ÀúÀåÇÏ¸é a, b¸Â±³È¯µÊ
+			z = *(pa + i);	//aë¥¼ zë¡œ, bë¥¼ aë¡œ, zë¥¼ bë¡œ ì €ìž¥í•˜ë©´ a, bë§žêµí™˜ë¨
 			*(pa + i) = *(pb + i);
-			*(pb + i) = z;		//+i¸¦ ÅëÇØ °¢ ¹è¿­ÀÇ index°¡ °°Àº ¿ø¼Ò³¢¸® ±³È¯ÇÔ
+			*(pb + i) = z;		//+ië¥¼ í†µí•´ ê° ë°°ì—´ì˜ indexê°€ ê°™ì€ ì›ì†Œë¼ë¦¬ êµí™˜í•¨
 		}
-		printf("¹Ù²ï ¹è¿­ a´Â %d %d %d %d \n", *(pa), *(pa + 1), *(pa + 2), *(pa + 3));
-		printf("¹Ù²î ¹è¿­ b´Â %d %d %d %d \n", *(pb), *(pb + 1), *(pb + 2), *(pb + 3));		//¹Ù²ï ¹è¿­ Ãâ·Â
+		printf("ë°”ë€ ë°°ì—´ aëŠ” %d %d %d %d \n", *(pa), *(pa + 1), *(pa + 2), *(pa + 3));
+		printf("ë°”ë€Œ ë°°ì—´ bëŠ” %d %d %d %d \n", *(pb), *(pb + 1), *(pb + 2), *(pb + 3));		//ë°”ë€ ë°°ì—´ ì¶œë ¥
 	}
 	else
-		printf("¹è¿­ÀÇ Å©±â°¡ ´Ù¸¨´Ï´Ù.");		//»çÀÌÁî°¡ ´Ù¸£¸é Ãâ·ÂÇÒ ¸Þ¼¼Áö
+		printf("ë°°ì—´ì˜ í¬ê¸°ê°€ ë‹¤ë¦…ë‹ˆë‹¤.");		//ì‚¬ì´ì¦ˆê°€ ë‹¤ë¥´ë©´ ì¶œë ¥í•  ë©”ì„¸ì§€
 }
 int main(void)
 {
